@@ -1,0 +1,22 @@
+version: '3'
+services:
+  node-app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - PORT=3000
+
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=tawanda
+      - MONGO_INITDB_ROOT_PASSWORD=6209lolo
+    volumes:
+      - mongo-db:/data/db
+
+volumes:
+  mongo-db:

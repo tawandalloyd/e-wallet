@@ -1,0 +1,19 @@
+{
+  "name": "e-wallet",
+  "version": "1.0.0",
+  "description": "efund project",
+  "main": "app.js",
+  "scripts": {
+    "start": "app.js",
+    "dev": "nodemon -L app.js"
+  },
+  "author": "tawanda lloyd",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
