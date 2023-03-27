@@ -1,10 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const userRouter = require('./routes/userRouter');
 
 const app = express();
 
+app.use(express.json());
+
+app.use((req,res,next) =>{
+    console.log("hello from middleware");
+    next();
+})
+
 app.get("/",(req,res)=>{
-    res.send("<h2>Hello there tawanda..Chucks<h2/>")
+    res.send("<h2>Hello there..Chucks<h2/>")
 });
 
 mongoose
@@ -15,5 +23,8 @@ mongoose
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, ()=> console.log(`listening on Port ${port}`));
 
+
+app.listen(port, ()=> console.log(`listening on Port ${port}`));
+app.use('/api/v1/users',userRouter);
+module.exports = app;
