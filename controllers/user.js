@@ -24,3 +24,15 @@ exports.createnewUser =  async(req, res) => {
     }
 
 }
+
+exports.users = catchAsync ( async (req, res)=>{
+  const user = await Users.find();
+
+  res.status(201).json({
+    status : "success",
+    data : {
+        user
+    }
+  })
+
+})
