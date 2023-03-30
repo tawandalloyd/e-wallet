@@ -10,7 +10,9 @@
   "author": "tawanda lloyd",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.2"
   },
   "devDependencies": {
